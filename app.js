@@ -19,6 +19,7 @@ function updateMovie(evt) {
 }
 
 $('#movieContainer').on('click', 'button', deleteMovies);
-function deleteMovies(event){
-    event.target.parentElement.remove();
+function deleteMovies(event) {
+    // (event.target.parentElement.remove();) //DOM way
+    $(event.target).parent().remove();
 }
