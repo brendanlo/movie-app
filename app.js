@@ -9,10 +9,16 @@ function updateMovie(evt) {
     const rating = $('#rating').val();
 
     let divHold = $('<div>')
-        .text(`This movie: ${title} has a rating of ${rating}`);
-    let button = $('<button>').addClass('remove');
+        .text(`This movie: ${title} has a rating of ${rating}`)
+        .addClass('remove');
+
+    let button = $('<button>').text('Delete');
     divHold.append(button);
 
     $('#movieContainer').append(divHold);
 }
 
+$('#movieContainer').on('click', 'button', deleteMovies);
+function deleteMovies(event){
+    event.target.parentElement.remove();
+}
